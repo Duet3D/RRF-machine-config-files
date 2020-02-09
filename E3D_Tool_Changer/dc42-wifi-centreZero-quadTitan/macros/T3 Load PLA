@@ -1,0 +1,9 @@
+; Load T3 with PLA
+G10 P3 S200 R160    ; set temperatures for PLA
+T3                  ; select tool
+M915 E0 S3          ; set stall sensitivity
+M913 E30            ; motor current to 30%
+M83                 ; relative extrusion
+G1 H1 E800 F6000    ; feed up to 800mm until stall
+M913 E100           ; restore normal motor current
+G1 E50 F120         ; extrude 50mm @ 2mm/sec
