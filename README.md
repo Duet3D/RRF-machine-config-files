@@ -16,4 +16,9 @@ Please adhere to the folder naming conventions:
 - Within that folder are a Readme.md file and one or more of the usual folders /sys, /macros, /menu.
 - Within those folders are the files that belong there.
 
-Your Readme.md file should describe tha machine configuration, and special features of your configration files, and the version(s) of RepRapFirmware that you have tested it with.
+Your Readme.md file should cover at least the following:
+- The machine hardware configuration, including any differences from the standard hardware configuration of that machine
+- If it is not a standard hardware configuration, the type of hotend, type of extruder, and (if applicable) Bowden tube length
+- Any special features of your configuration files
+- Where X0 Y0 is, e.g. centre of bed, or front left corner (not needed if the machine is a delta printer)
+- The version(s) of RepRapFirmware that you have tested it with
