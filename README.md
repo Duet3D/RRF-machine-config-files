@@ -8,6 +8,7 @@ Many of the files here are user-contributed and not tested by Duet3D. **Duet3D L
 - Test the Z probe carefully before relying on it for homing or bed probing. See the Duet3D wiki page on testing a Z probe.
 
 **Contributions**
+
 Contributions from users are welcomed. The preferred way to make a contribution is to fork this repository, add your contribution to the fork, and submit a pull request.
 
 Please adhere to the folder naming conventions:
@@ -20,7 +21,7 @@ Your README.md file should cover at least the following:
 - The machine hardware configuration, including any differences from the standard hardware configuration of that machine
 - If it is not a standard hardware configuration, the type of hotend, type of extruder, and (if applicable) Bowden tube length
 - Any special features of your configuration files
-- Where X0 Y0 is, e.g. centre of bed, or front left corner (not needed if the machine is a delta printer)
+- Where X0 Y0 is, e.g. centre of bed, or front left corner (not needed if the machine is a delta)
 - The version(s) of RepRapFirmware that you have tested it with
 
 Please note, the Creative Common Zero license for this repository allows anyone to use these files for any purpose, without attribution or any requirement to share derived works. Make sure you are happy with this before submitting your contributions. However, if you wish to submit a contribution derived someone else's files, please ackowledge that person at least in the readme file.
