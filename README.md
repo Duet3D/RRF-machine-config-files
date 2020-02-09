@@ -13,10 +13,10 @@ Contributions from users are welcomed. The preferred way to make a contribution 
 Please adhere to the folder naming conventions:
 - The root folders are machine identifiers
 - Within the folder for a particular machine there is one folder for each contributed set of files for that machine. That folder name should comprise the identifier of the person making the contribution, the electronics name (usually one of wifi, eth, maestro, duet3), and one or more groups to describe the machine variant or configuration variant. If the files are for RepRapFirmware 2 then -rrf2 should be inserted immediately after the electronics name.
-- Within that folder should be a Readme.md file and one or more of the usual folders /sys, /macros, /menu.
+- Within that folder should be a README.md file and one or more of the usual folders /sys, /macros, /menu.
 - Within those folders are the files that belong there.
 
-Your Readme.md file should cover at least the following:
+Your README.md file should cover at least the following:
 - The machine hardware configuration, including any differences from the standard hardware configuration of that machine
 - If it is not a standard hardware configuration, the type of hotend, type of extruder, and (if applicable) Bowden tube length
 - Any special features of your configuration files
