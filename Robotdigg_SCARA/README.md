@@ -6,3 +6,5 @@ These files are for a Robotdigg SCARA arm (https://www.robotdigg.com/product/929
 - Other mechanical enhancements as described at https://miscsolutions.wordpress.com/2017/09/24/improving-the-robotdigg-scara-printer/
 
 X0 Y0 is approximately at the centre of the printable area, excluding the additional printable area gained by moving the proximal homing switch.
+
+Tested with RRF 2.05.
