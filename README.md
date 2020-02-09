@@ -7,6 +7,10 @@ Many of the files here are user-contributed and not tested by Duet3D. **Duet3D L
 - Use reduced motor currents during testing, to reduce the possibility of damage
 - Test the Z probe carefully before relying on it for homing or bed probing. See the Duet3D wiki page on testing a Z probe.
 
+The root folders in this repository are machine names. Within each root folder are one or more subfolders, each one containing a set of files for the machine. The name of the subfolder is composed from the identifier of the contributor, the electronics type (normally -wifi-, -eth-, -maestro- or -duet3-) with suffix -rrf2- if the files are for RepRapFirmware 2 (no suffix if they are for RepRapFirmware 3), followed by other groups of letters describing the machine or configuration variant. Within each subfolder is a README.md file with more details about that set of files.
+
+Files for Duet WiFi will generally work on Duet Ethernet, and vice versa.
+
 **Contributions**
 
 Contributions from users are welcomed. The preferred way to make a contribution is to fork this repository, add your contribution to the fork, and submit a pull request.
@@ -23,5 +27,7 @@ Your README.md file should cover at least the following:
 - Any special features of your configuration files
 - Where X0 Y0 is, e.g. centre of bed, or front left corner (not needed if the machine is a delta)
 - The version(s) of RepRapFirmware that you have tested it with
+
+Make sure that you do not include any passwords in your config.g file or any other files, except perhaps for the default 'reprap' password.
 
 Please note, the Creative Common Zero license for this repository allows anyone to use these files for any purpose, without attribution or any requirement to share derived works. Make sure you are happy with this before submitting your contributions. However, if you wish to submit a contribution derived someone else's files, please ackowledge that person at least in the readme file.
