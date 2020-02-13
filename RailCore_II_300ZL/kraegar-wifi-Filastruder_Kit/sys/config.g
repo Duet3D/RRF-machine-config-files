@@ -93,6 +93,5 @@ M558 P9 C"^zprobe.in" H5 R1 F50 T6000 A5 S0.02  ; _RRF3_ BLTouch connected to Z 
 M950 S0 C"duex.pwm1"				   ; _RRF3_ Define BLTouch Servo (S0) on duet pwm1
 G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately - do a paper test, and put the probed value in the Z value here
 
-M208 S1 Z-0.2				; set minimum Z
-;
+
 T0					; select first hot end
