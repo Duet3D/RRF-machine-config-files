@@ -63,9 +63,6 @@ M106 P2 S0
 ; Tool definitions
 M563 P0 D0 H1                       	; Define tool 0
 G10 P0 S0 R0                        	; Set tool 0 operating and standby temperatures
-;*** If you have a single-nozzle build, comment the next 2 lines
-;M563 P1 D1 H2                      	; Define tool 1
-;G10 P1 S0 R0 X0 Y17                    	; Set tool 1 operating and standby temperatures
 
 ; Z probe and compensation definition
 ;*** If you have a switch instead of an IR probe, change P1 to P4 in the following M558 command
