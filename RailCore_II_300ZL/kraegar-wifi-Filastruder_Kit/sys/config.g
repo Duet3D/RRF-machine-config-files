@@ -1,4 +1,4 @@
-; Configuration file for My Printer
+; Configuration file for RailCore II 300 ZL By Filastruder
 ; Communication and general
 M111 S0                             	; Debug off
 M550 PRailCore					; Machine name and Netbios name (can be anything you like)
