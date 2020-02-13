@@ -78,6 +78,5 @@ M307 H3 A-1 C-1 D-1
 M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02  
 G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately - do a paper test, and put the probed value in the Z value here
 
-M208 S1 Z-0.2				; set minimum Z
-;
+
 T0					; select first hot end
