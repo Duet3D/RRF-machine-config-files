@@ -1,0 +1,26 @@
+1) Backup your entire /sys
+	If you use M500 & config-override.g I recommend removing the M500 from config.g for now, and copying your values into config.g before starting
+	Delete config-override.g once you've moved its values into config.g
+	You may want to move your hotend fan into an always on port if you've moved it, at least temporarily.
+2) download the zip file Duet2and3Firmware-3.0.zip from here: https://github.com/dc42/RepRapFirmware/releases/tag/3.0 (DO NOT INSTALL IT YET)
+3) If you're not running Duet Web Control 2.04, download it from the same link (DuetWebControl-SD-2.04.zip). Install it now.
+4) edit homex.g homey.g homez.g homeall.g deployprobe.g retractprobe.g bed.g (or just replace them, either way)
+	Edits to home files are to change S1 to H1, S2 to H2
+	Edits to deploy/retract are to change P3 to P0
+	Edits to bed.g: remove unnecessary S2
+5) edit config.g (search the config.g for _RRF3_ and follow the notes)  DO NOT REBOOT WHEN DONE EDITING
+	Edits for config.g:
+		Change thermistor lines from M305 to M308 (comment out the M305 lines, move your thermistor T/B/C values if you've customized them) into M308 format)
+		Add two M950 lines to define the bed & extruder0 heaters
+		Add three M950 lines to define hotend and layer fans.
+		Comment out M574 endstop definition, add two new M574 lines
+		Comment out M307 and M558 for bltouch, add in new M950 & M558.  (adjust F,T,A,S values if you've customized them)
+		IF YOU USE A PIEZO, IR PROBE, OR OTHER ZPROBE YOU NEED TO MODIFY YOUR M558 ACCORDINGLY
+6) upload duet2and3firmeware-3.0.zip and reboot when it prompts
+7) Check hotend / bed show correct values FIRST.  If not, stop immediately so we can fix that. (I highly recommend you have your hotend fan always on for these tests)
+8) Check your x/y endstop status using M119 (both with endstop triggered and open)
+9) Check your zprobe status.  Test deploying and retracting (copy the gcode into your consle)
+10) Test home x / y
+11) Test home Z
+12) Test bed heat
+13) Test hotend heat
