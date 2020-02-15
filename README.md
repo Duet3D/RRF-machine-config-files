@@ -2,7 +2,7 @@
 This repository contains sample configuration files for RepRapFirmware to suit various 3D printers, CNC machines, Laser cutters and engravers.
 
 **WARNING!**
-Many of the files here are user-contributed and not tested by Duet3D. **Duet3D Limited accespts no responsibility for any consequences arising from using these files**. So you use them at your own risk! In particular, we recommend you the following:
+Many of the files here are user-contributed and not tested by Duet3D. **Duet3D Limited accepts no responsibility for any consequences arising from using these files**. So you use them at your own risk! In particular, we recommend you the following:
 - Review the commands in the files to check that they are suitable for your machine. In particular, check that any M143 temperature limits are appropriate, adjust the motor currents in M906 commands to suit your motors, and check that the M208 limits are correct.
 - Use reduced motor currents during testing, to reduce the possibility of damage
 - Test the Z probe carefully before relying on it for homing or bed probing. See the Duet3D wiki page on testing a Z probe.
