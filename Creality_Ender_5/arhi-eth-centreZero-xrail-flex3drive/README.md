@@ -1,4 +1,4 @@
-This file is for modiefied Creality Ender5
+This file is for modified Creality Ender5
 
 Modifications:
  * Duet2Ethernet running RRF V3.01RC2
