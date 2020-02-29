@@ -9,4 +9,6 @@ Modifications:
  * Using remote direct extruder Flex3Drive G5
  * Precission Piezo ORION bed leveling probe ANALOG output connected to ZPROBE 
 
+There are also configs for standard Z endstop, Andromeda and BLTouch included. All tested, all working.
+
 X0 Y0 is at the centre of the bed.
