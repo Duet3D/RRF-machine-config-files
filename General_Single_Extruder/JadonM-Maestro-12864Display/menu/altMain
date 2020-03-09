@@ -1,0 +1,70 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "altMain"
+;
+; This is the menu when clicking the scroll right button from the main overview. (the "main" file)
+; It provides additional print settings, including the speed and extrusion multipliers,
+; as well as babystepping. The general layout is the same as the main screen.
+;
+;
+; Note: The top menu and axis positions sections should always be exactly the same
+; as the the "main" file.
+
+
+
+; --------------- "Not Printing" Menu Buttons ---------------
+button R0 C0 F0 V5 W42 T"Print" A"menu selectSD"
+image V5 L"imgs/vline.img"
+button V5 W42 T"Move" A"menu moveAxis"
+image V5 L"imgs/vline.img"
+button V5 W42 T"Menu" A"menu mainMenu"
+
+
+; --------------- "Printing" Menu Buttons ---------------
+button R0 C0 F0 W64 V2 T"Pause" A"M25"
+image V2 L"imgs/vline.img"
+button W64 V2 T"Info" A"menu printInfo"
+
+
+; --------------- "Paused" Menu Buttons ---------------
+button R0 C0 F0 W42 V6 T"Resume" A"M24"
+image V6 L"imgs/vline.img"
+button W42 V6 T"Menu" A"menu mainMenu"
+image V6 L"imgs/vline.img"
+button W42 V6 T"Abort" A"menu confirmAbort"
+
+
+; --------------- Main Overview ---------------
+image R11 C0 L"imgs/hline.img"
+
+; Flowrate (Extrusion Multiplier)
+image R14 C40 L"imgs/flowrate.img"
+alter C65 F0 N400 W25 H2
+
+; Feedrate (Print Speed)
+image R26 C40 L"imgs/feedrate.img"
+alter C65 N500 W25 H2
+
+; Babystepping
+image R38 C40 L"imgs/zstep.img"
+alter C65 D2 N521 W25 H2
+text T" mm"
+
+
+; --------------- Scroll Button ---------------
+button R25 C6 F1 T" « " A"return"
+
+
+; --------------- Axis Positions ---------------
+image R53 C0 L"imgs/hline.img"
+text R54 C17 F0 T"X "
+value N510 W25
+text T" Y "
+value N511 W25
+text T" Z "
+value N512 D2 W30

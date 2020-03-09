@@ -1,0 +1,75 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "main"
+;
+; This is the file for the overview screen of the menu system.
+; On the top of the screen we have a menu that updates based
+; on the print status. In the middle we show the temperatures and fan
+; speeds, and the bottom shows axis positions. There is a scroll
+; button on the right to go to the "altMain" menu.
+
+
+
+; --------------- "Not Printing" Menu Buttons ---------------
+button R0 C0 F0 V5 W42 T"Print" A"menu selectSD"
+image V5 L"imgs/vline.img"
+button V5 W42 T"Move" A"menu moveAxis"
+image V5 L"imgs/vline.img"
+button V5 W42 T"Menu" A"menu mainMenu"
+
+
+; --------------- "Printing" Menu Buttons ---------------
+button R0 C0 F0 W64 V2 T"Pause" A"M25"
+image V2 L"imgs/vline.img"
+button W64 V2 T"Info" A"menu printInfo"
+
+
+; --------------- "Paused" Menu Buttons ---------------
+button R0 C0 F0 W42 V6 T"Resume" A"M24"
+image V6 L"imgs/vline.img"
+button W42 V6 T"Menu" A"menu mainMenu"
+image V6 L"imgs/vline.img"
+button W42 V6 T"Abort" A"menu confirmAbort"
+
+
+; --------------- Main Overview ---------------
+; Note: this section may need modified if you use different heater and fan numbers.
+image R11 C0 L"imgs/hline.img"
+
+; Bed Temp
+image R14 C25 L"imgs/bed.img"
+alter R14 C40 N180 W20 H2
+text T" / "
+value N80 W20
+text T"°C"
+
+; Hotend Temp
+image R26 C25 L"imgs/temp.img"
+alter C40 N100 W20 H2
+text T" / "
+value N0 W20
+text T"°C"
+
+; Fan Speed
+image R38 C25 L"imgs/fan.img"
+alter C52 N300 W25 H1
+button C80 F0 T"OFF" A"M106 P0 S0"
+
+
+; --------------- Scroll Button ---------------
+button R25 C104 F1 T" » " A"menu altMain"
+
+
+; --------------- Axis Positions ---------------
+image R53 C0 L"imgs/hline.img"
+text R54 C17 F0 T"X "
+value N510 W25
+text T" Y "
+value N511 W25
+text T" Z "
+value N512 D2 W30
