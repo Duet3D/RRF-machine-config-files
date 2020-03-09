@@ -1,0 +1,51 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "bedLevel"
+;
+; This menu controls the various aspects of bed leveling. The goal is to
+; be able to do everything leveling related from right here. After the
+; simple header with the auto level button, (which runs the "bedLevel.g" file)
+; we have homing commands, a Z height adjustment, a button to disable all
+; motors, and a row of buttons at the bottom to go to three manual leveling
+; points. (likely over the leveling screws) These run the files "goToLevelPoint1.g"
+; "goToLevelPoint2.g" and "goToLevelPoint3.g" files, respectively.
+
+
+
+; --------------- Header ---------------
+button R0 C0 W63 F0 H1 T"Auto Level" A"M98 P0:/menu/scripts/autoLevel.g"
+image L"imgs/vline.img"
+button W64 F0 T"Back" A"return"
+image R11 C0 L"imgs/hline.img"
+
+
+; --------------- Homing Commands ---------------
+image R14 C3 L"imgs/home.img"
+button C13 W20 H2 T"All" A"G28"
+image C50 L"imgs/home.img"
+button C60 W20 H2 T"XY" A"G28 X Y"
+image C95 L"imgs/home.img"
+button C105 W20 H2 T" Z " A"G28 Z"
+
+
+; --------------- Z Adjustment ---------------
+image R27 C8 L"imgs/zstep.img"
+alter N512 D2 W30 H2
+text T"mm"
+
+
+; --------------- Disable Motors Button ---------------
+image R27 C70 L"imgs/motor.img"
+button C80 T"Off" A"M18"
+
+
+; --------------- Move Buttons ---------------
+text C42 W40 H1 R39 T"Move to:"
+button R51 C5 W36 H2 T"Point 1" A"M98 P0:/menu/scripts/goToLevelPoint1.g"
+button C46 W36 H2 T"Point 2" A"M98 P0:/menu/scripts/goToLevelPoint2.g"
+button C90 W36 H2 T"Point 3" A"M98 P0:/menu/scripts/goToLevelPoint3.g"

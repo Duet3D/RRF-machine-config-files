@@ -1,0 +1,28 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "about"
+;
+; This menu shows some details about the menu system, as well as the printer's IP address.
+
+
+
+; --------------- Header ---------------
+text R0 C0 W63 F0 H1 T"About"
+image L"imgs/vline.img"
+button W64 F0 T"Back" A"return"
+image R11 C0 L"imgs/hline.img"
+
+
+; --------------- IP Address ---------------
+text R14 C38 H1 F0 T"IP Address: "
+value R24 C0 W128 H1 N534
+
+
+; --------------- Info ---------------
+text R39 C0 W128 H1 F0 T"Ultimate Duet Menu System"
+text R49 C0 W128 H1 F0 T"V1.00 (2/28/2020)"
