@@ -1,0 +1,62 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "moveAxis"
+;
+; This file shows the menu that lets the user move the motors and home axis.
+; The header contains a back button, along with buttons to home all and disable
+; the motors. In the main section we have rows of buttons to home, jog, and
+; adjust the position of each axis. The extruder is controlled on the "moveExtruder"
+; menu. We then show the current axis positions on the bottom of the screen. The
+; disable motors button is only shown when not printing.
+
+
+
+; --------------- Header ---------------
+image R1 C1 L"imgs/home.img"
+button R0 C11 W20 T"All" A"G28"
+image C41 V5 L"imgs/motor.img"
+button C51 W35 V5 T"Off" A"M18"
+image C86 L"imgs/vline.img
+button R0 W42 F0 T"Back" A"return"
+image R11 C0 L"imgs/hline.img"
+
+
+; --------------- X Axis ---------------
+image R14 C15 L"imgs/home.img"
+button C25 T" X " A"G28 X"
+button C47 T"-25" A"G91 G1 X-25 F6000"
+alter C66 N510 D0 W18 H2
+text T"mm"
+button C105 T"+25" A"G91 G1 X+25 F6000"
+
+
+; --------------- Y Axis ---------------
+image R27 C15 L"imgs/home.img"
+button C25 T" Y " A"G28 Y"
+button C47 T"-25" A"G91 G1 Y-25 F6000"
+alter C66 N511 D0 W18 H2
+text T"mm"
+button C105 T"+25" A"G91 G1 Y+25 F6000"
+
+
+; --------------- Z Axis ---------------
+image R40 C15 L"imgs/home.img"
+button C25 T" Z " A"G28 Z"
+button C47 T"-25" A"G91 G1 Z-25 F6000"
+alter C66 N512 D2 W34 H2
+button C105 T"+25" A"G91 G1 Z+25 F6000"
+
+
+; --------------- Axis Positions ---------------
+image R53 C0 L"imgs/hline.img"
+text R54 C15 F0 T"X "
+value N510 W25
+text T" Y "
+value N511 W25
+text T" Z "
+value N512 D2 W30

@@ -1,0 +1,22 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "confirmAbort"
+;
+; This yes/no page lets the user confirm before issuing an abort command.
+
+
+
+; --------------- Header ---------------
+text R0 C0 W128 F0 H1 T"Abort the print?"
+image R12 C0 L"imgs/hline.img"
+
+
+; --------------- Buttons ---------------
+button R31 C20 W44 H2 T"No" A"return"
+image C64 L"imgs/vline.img"
+button C64 W40 H0 T"Yes" A"M0 H1|menu main"

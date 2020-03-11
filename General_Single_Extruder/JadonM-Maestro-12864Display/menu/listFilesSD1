@@ -1,0 +1,26 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "listFilesSD1"
+;
+; This lets the user select and print a file from SD 1. It consists
+; of a header and file list command.
+;
+;
+; Note: This should be kept identical to "listFilesSD0" except for the SD number.
+
+
+
+; --------------- Header ---------------
+text R0 C0 W63 F0 H1 T"Print File"
+image L"imgs/vline.img"
+button W64 F0 T"Back" A"return"
+image R11 C0 L"imgs/hline.img"
+
+
+; --------------- Show Files ---------------
+files R15 N4 I"1:" A"M32 #0|return|return"

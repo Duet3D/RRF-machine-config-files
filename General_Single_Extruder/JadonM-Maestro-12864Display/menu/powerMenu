@@ -1,0 +1,26 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "powerMenu"
+;
+; This simple menu allows the user to manipulate the ATX power supply system.
+; "Automatic Power Off" turns off the printer after all thermistatic fans have
+; stopped using M81 with a S1 parameter.
+
+
+
+; --------------- Header ---------------
+text R0 C2 W63 H1 F0 T"Power"
+image L"imgs/vline.img
+button W64 F0 T"Back" A"return"
+image R11 C0 L"imgs/hline.img"
+
+
+; --------------- Menu Buttons ---------------
+button R13 C1 F0 H0 T"- Power On" A"M80|menu main"
+button R25 C1 F0 H0 T"- Immediate Power Off" A"M81|menu main"
+button R37 C1 F0 H0 T"- Automatic Power Off" A"M81 S1|menu main"

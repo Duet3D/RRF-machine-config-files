@@ -1,0 +1,42 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "changeFilament"
+;
+; This is a simple extrusion control menu dedicated to changing filament.
+; It contains temperature controls, some manual extruder control, and
+; buttons to run the "load.g" and "unload.g" files.
+
+
+
+; --------------- Header ---------------
+text R0 C0 W90 F0 H1 T"Change Filament"
+image L"imgs/vline.img"
+button W37 F0 T"Back" A"return"
+image R11 C0 L"imgs/hline.img"
+
+
+; --------------- Temperature ---------------
+; Note: you may need to change this section depending on your default heater number.
+image R16 C28 L"imgs/temp.img"
+alter C40 N100 W20 H2
+text T" / "
+value N0 W20
+text T"°C"
+
+
+; --------------- Buttons ---------------
+button R32 C0 W45 H1 T"Unload" A"M98 P0:/menu/scripts/unload.g"
+button C48 T"-5 " A"T0 G91 G1 E-5 F400"
+button C65 T"+5 " A"T0 G91 G1 E+5 F400"
+button C83 W45 T"Load" A"M98 P0:/menu/scripts/load.g"
+
+
+; --------------- Print Button---------------
+; The "print" button is shown when not printing and "resume" when paused.
+button R48 C0 W128 V5 T"Print" A"menu selectSD"
+button R48 C0 W128 V6 T"Resume" A"M24|menu main"

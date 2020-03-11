@@ -1,0 +1,49 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "mainMenu"
+;
+; This shows the menu of additional commands in list style, with
+; a simple header. There are two menus, one while the printer is
+; paused, and one when it's idle.
+
+
+
+; --------------- Header ---------------
+text R0 C2 W63 H1 F0 T"Menu"
+image L"imgs/vline.img
+button W64 F0 T"Back" A"return"
+image R11 C0 L"imgs/hline.img"
+
+
+; --------------- "Not Printing" Buttons ---------------
+
+; Left Column
+button R13 C1 F0 H0 V5 T"- Preheat" A"menu preheat"
+button R25 C1 F0 H0 V5 T"- Run Macro" A"menu macros"
+button R37 C1 F0 H0 V5 T"- Extruder" A"menu moveExtruder"
+button R49 C1 F0 H0 V5 T"- Level Bed" A"menu bedLevel"
+
+; Right Column
+button R13 C65 F0 H0 V5 T"- Power" A"menu powerMenu"
+button R25 C65 F0 H0 V5 T"- Z Probe" A"menu probeMenu"
+button R37 C65 F0 H0 V5 T"- About" A"menu about"
+
+
+; --------------- "Paused Buttons ---------------
+
+; Left Column
+button R13 C1 F0 H0 V6 T"- Move" A"menu moveAxis"
+button R25 C1 F0 H0 V6 T"- Extruder" A"menu moveExtruder"
+button R37 C1 F0 H0 V6 T"- Run Macro" A"menu macros"
+button R49 C1 F0 H0 V6 T"- Preheat" A"menu preheat"
+
+; Right Column
+button R13 C65 F0 H0 V6 T"- Power" A"menu powerMenu"
+button R25 C65 F0 H0 V6 T"- Z Probe" A"menu probeMenu"
+button R37 C65 F0 H0 V6 T"- Print Info" A"menu printInfo"
+button R49 C65 F0 H0 V6 T"- About" A"menu about"

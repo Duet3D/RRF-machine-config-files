@@ -1,0 +1,38 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "printInfo"
+;
+; This menu shows details about the progress of the print in progress.
+; It shows the percentage of printing progress, and time estimations.
+; Unfortunatly, we can't show the elapsed print time as of firmware
+; version 3.01-RC2.
+
+
+
+; --------------- Header ---------------
+text R0 C0 W90 F0 H1 T"Printing"
+image R1 L"imgs/vline.img"
+button W37 F0 T"Back" A"return"
+image R12 C0 L"imgs/hline.img"
+
+
+; --------------- Progress ---------------
+
+; Print Percentage
+text R15 C5 H0 T"Percent Complete:"
+value R15 C95 W28 H2 N535 D1
+
+text R29 C0 W128 H1 T"Estimated Time Left:"
+
+; File Progress
+text R41 C5 H0 T"File:"
+value R41 C59 W64 H2 N536
+
+;Filament Progress
+text R53 C5 H0 T"Filament:"
+value R53 C59 W64 H2 N537

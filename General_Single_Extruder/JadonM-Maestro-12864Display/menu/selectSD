@@ -1,0 +1,25 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "selectSD"
+;
+; This allows the user to select an SD card then leads them to the print page.
+; There's a simple header with a back button on top and the middle gives the
+; two SD card options, leading to the appropriate "listFilesSD" menu.
+
+
+
+; --------------- Header ---------------
+text R0 C0 W80 F0 T"Select SD Card"
+image L"imgs/vline.img"
+button W47 F0 T"Back" A"return"
+image R11 C0 L"imgs/hline.img"
+
+
+; --------------- Show SD Cards ---------------
+button R27 C1 F0 H0 T"- Internal    (SD 0)" A"menu listFilesSD0"
+button R39 C1 F0 H0 T"- External   (SD 1)" A"menu listFilesSD1"
