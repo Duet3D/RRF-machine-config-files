@@ -2,19 +2,15 @@
 ; called before tool 2 is selected
 
 ;Unlock Coupler
-M98 P"/macros/Coupler - Unlock"
+M98 P"/macros/Coupler - Unlock"	; unlock Coupler
 
-;Move to location
-G1 X64.5 Y100 F50000
+M564 S0 						; allow movement outside the normal limits
 
-;Move in
-G1 X64.5 Y130 F50000
+G1 X66.2 Y50 F50000				; move to location
+G1 Y104 F50000					; move in
+G1 Y119.0 F2500					; collect
 
-;Collect
-G1 X64.5 Y143 F2500
-
-;Close Coupler
-M98 P"/macros/Coupler - Lock"
+M98 P"/macros/Coupler - Lock"	; close Coupler
 
 ;WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING!
 ;if you are using non-standard length hotends ensure the bed is lowered enough BEFORE undocking the tool!
@@ -22,5 +18,7 @@ G91
 G1 Z10 F1000
 G90
 
-;Move Out
-G1 X64.5 Y50 F4000
+G1 Y50 F4000					; move out
+
+M208 Y49						; set Y max for this tool
+M564 S1 						; apply the normal limits again

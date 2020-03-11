@@ -1,26 +1,24 @@
 ; tfree3.g
 ; called when tool 3 is freed
 
-;Drop the bed
 G91
-G1 Z4 F1000
+G1 Z4 F1000; drop the bed
 G90
 
-;Purge nozzle
-;M98 P"purge.g"
+M564 S0 						; allow movement outside the normal limits
+
+;M98 P"purge.g"					; purge nozzle
 
 ;Move In
-G53 G1 X154.5 Y50 F50000
-G53 G1 X154.5 Y100 F50000
-G53 G1 X154.5 Y120 F50000
-G53 G1 X154.5 Y143 F5000
+G53 G1 X156.2 Y50 F50000		; move to location
+G53 G1 Y104 F50000; move in
+G53 G1 Y119.0 F2500
 
-;Open Coupler
-M98 P"/macros/Coupler - Unlock"
+M98 P"/macros/Coupler - Unlock"	; open Coupler
 
-;fan off
-M106 P8 S0
+M106 P8 S0						; fan off
 
-;Move Out
-G53 G1 X154.5 Y75 F50000
+G53 G1 Y104 F2500				; move Out
+G53 G1 Y50 F50000
 
+M564 S1 						; apply the normal limits again
