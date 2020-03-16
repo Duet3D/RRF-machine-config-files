@@ -35,7 +35,7 @@ M584 E3:4:23.0					; set extruder drivers (tool 2 missing)
 
 M208 X-185:178.5 Y-149:49 Z0:300 C0:500			; Set axis maxima & minima
 ;*** Add a 4th E parameter in each of the following 2 lines when tool 2 is fitted
-M92 X100 Y100 Z1600 C200 E834:834:834			; Set steps per mm assuming x16 microstepping
+M92 X100 Y100 Z1600 C200 E834:834:409			; Set steps per mm assuming x16 microstepping (834 for Titan, 409 for Hemera)
 M350 E16:16:16 I1 								; Configure microstepping with interpolation
 M350 C16 I1
 M350 X16 Y16 Z16 I1								; Configure microstepping with interpolation
