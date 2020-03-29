@@ -25,8 +25,8 @@ M569 P3 S0 						; Drive 3 E0
 M569 P4 S0 						; Drive 4 E1
 M569 P5 S0 						; Drive 5 COUPLER
 ;*** Uncomment the following line when Tool 2 is fitted
-;M569 P22.0 S0					; Drive 22.0 E2
-M569 P23.0 S0 				    ; Drive 23.0 E3
+;M569 P22.0 S0 D2				; Drive 22.0 (E2) spreadCycle mode
+M569 P23.0 S0 D2 				; Drive 23.0 (E3) spreadCycle mode
 
 M584 X2 Y1 Z0 C5				; Axis to driver mapping
 ;*** Remove the next line and uncomment the following one when tool 2 is fitted
@@ -35,7 +35,7 @@ M584 E3:4:23.0					; set extruder drivers (tool 2 missing)
 
 M208 X-185:178.5 Y-149:49 Z0:300 C0:500			; Set axis maxima & minima
 ;*** Add a 4th E parameter in each of the following 2 lines when tool 2 is fitted
-M92 X100 Y100 Z1600 C200 E834:834:409			; Set steps per mm assuming x16 microstepping (834 for Titan, 409 for Hemera)
+M92 X100 Y100 Z1600 C200 E834:834:409			; Set steps per mm assuming x16 microstepping
 M350 E16:16:16 I1 								; Configure microstepping with interpolation
 M350 C16 I1
 M350 X16 Y16 Z16 I1								; Configure microstepping with interpolation
@@ -43,7 +43,7 @@ M350 X16 Y16 Z16 I1								; Configure microstepping with interpolation
 M566 X400 Y400 Z8 C2 E200:200:200				; Set maximum instantaneous speed changes (mm/min)
 M203 X35000 Y35000 Z1200 C10000 E5000:5000:5000	; Set maximum speeds (mm/min)
 M201 X6000 Y6000 Z400 C500 E2500:2500:2500		; Set accelerations (mm/s^2)
-M906 X2000 Y2000 Z1330 C500 E1600:1600:1200 I30 ; Set motor currents (mA) and motor idle factor in percent
+M906 X2000 Y2000 Z1330 C500 E1400:1400:1000 I30 ; Set motor currents (mA) and motor idle factor in percent
 M84 S120 										; Set idle timeout
 
 ; Endstops
