@@ -30,7 +30,7 @@ M84 S30                                    ; Set idle timeout
 
 ; Axis Limits
 M208 X0 Y0 Z0 S1                           ; set axis minima
-M208 X225 Y220 Z210.2 S0                     ; set axis maxima
+M208 X223 Y223 Z210.2 S0                     ; set axis maxima
 
 ; Endstops
 M574 X1 S0 P"xstop"                        ; configure active-high endstop for low end on X via pin xstop
@@ -56,7 +56,7 @@ M106 P2 S255 I0 F500 H-1         ; Set fan 2 - case FANS - value, PWM signal inv
 
 ; Tools
 M563 P0 D0 H1 F0                           ; define tool 0
-G10 P0 X0 Y0 Z0                            ; set tool 0 axis offsets
+G10 P0 X Y Z0                            ; set tool 0 axis offsets
 G10 P0 R0 S0                               ; set initial tool 0 active and standby temperatures to 0C
 
 ; Custom settings are not defined
