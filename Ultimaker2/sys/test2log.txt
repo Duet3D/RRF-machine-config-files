@@ -1,0 +1,8 @@
+2019-07-25 12:09:06 Event logging started
+2019-07-25 12:09:24 Event logging stopped
+power up + 00:01:32 Event logging started
+power up + 00:02:49 HTTP client 192.168.1.49 login succeeded
+2019-07-25 22:02:50 Date and time set at power up + 00:02:49
+2019-07-25 22:03:33 Warning: VIN under-voltage event (9.5V)
+2019-07-26 17:16:06 Event logging started
+2019-07-26 17:16:31 Event logging stopped

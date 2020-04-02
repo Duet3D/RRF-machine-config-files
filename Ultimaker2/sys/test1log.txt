@@ -1,0 +1,4 @@
+2018-06-05 16:46:33 Event logging started
+2018-06-05 16:47:44 HTTP client 192.168.1.7 login succeeded
+2018-06-05 16:48:44 HTTP client 192.168.1.7 disconnected
+2018-06-24 13:14:13 Event logging started
