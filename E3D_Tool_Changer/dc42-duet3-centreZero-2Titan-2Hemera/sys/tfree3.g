@@ -1,8 +1,9 @@
 ; tfree3.g
 ; called when tool 3 is freed
+; tool 3 is a Hemera with tool board, dock is at standard Y position
 
 G91
-G1 Z4 F1000; drop the bed
+G1 Z4 F1000						; drop the bed
 G90
 
 M564 S0 						; allow movement outside the normal limits
@@ -11,7 +12,7 @@ M564 S0 						; allow movement outside the normal limits
 
 ;Move In
 G53 G1 X156.2 Y50 F50000		; move to location
-G53 G1 Y104 F50000; move in
+G53 G1 Y104 F50000				; move in part way
 G53 G1 Y119.0 F2500
 
 M98 P"/macros/Coupler - Unlock"	; open Coupler

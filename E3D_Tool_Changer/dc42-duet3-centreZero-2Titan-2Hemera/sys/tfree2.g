@@ -1,5 +1,6 @@
 ; tfree2.g
 ; called when tool 2 is freed
+; tool 2 is a Hemera with tool board, dock is 2mm forward of standard Y position
 
 G91
 G1 Z4 F1000						; drop the bed
@@ -11,8 +12,8 @@ M564 S0 						; allow movement outside the normal limits
 
 ;Move In
 G53 G1 X66.2 Y50 F50000			; move to location
-G53 G1 Y104 F50000; move in
-G53 G1 Y119.0 F2500
+G53 G1 Y104 F50000				; move in
+G53 G1 Y117.0 F2500
 
 M98 P"/macros/Coupler - Unlock" ; open Coupler
 

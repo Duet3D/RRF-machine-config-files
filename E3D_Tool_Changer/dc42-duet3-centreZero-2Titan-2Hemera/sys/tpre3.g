@@ -1,5 +1,6 @@
 ; tpre3.g
 ; called before tool 3 is selected
+; tool 3 is a Hemera with tool board, dock is at standard Y position
 
 M98 P"/macros/Coupler - Unlock"	; unlock Coupler
 
@@ -19,5 +20,5 @@ G90
 
 G1 Y50 F4000					; move out
 
-M208 Y49						; set Y max for this tool
+M208 Y38						; set Y max for this tool (machine coordinates)
 M564 S1 						; apply the normal limits again
