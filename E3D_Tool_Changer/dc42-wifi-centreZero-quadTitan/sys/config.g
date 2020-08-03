@@ -40,6 +40,7 @@ M566 X400 Y400 Z8 C2 E200:200:200:200			; Set maximum instantaneous speed change
 M203 X35000 Y35000 Z1200 C10000 E5000:5000:5000:5000	; Set maximum speeds (mm/min)
 M201 X6000 Y6000 Z400 C500 E2500:2500:2500:2500			; Set accelerations (mm/s^2)
 M906 X2000 Y2000 Z1330 C500 E1600:1600:1600:1600 I30 	; Set motor currents (mA) and motor idle factor in percent
+M913 C50
 M84 S120 												; Set idle timeout
 
 ; Endstops
