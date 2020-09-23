@@ -1,4 +1,4 @@
-This is a RepRapFirmware V3 compatible config and macro set for a CoreXY (DBot) printer. (3.1.1 tested)
+This is a RepRapFirmware V3 compatible config and macro set for a CoreXY (DBot) printer running a DuetWiFi. (3.1.1 tested)
 
 Printer features:
 - CoreXY
