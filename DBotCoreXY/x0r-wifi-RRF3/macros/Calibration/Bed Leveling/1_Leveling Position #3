@@ -1,0 +1,5 @@
+;Moves print head to front middle position closest to roll adjustment screw.
+;
+G90			; Absolute positioning
+G1 Z2			; Lower bed for nozzle clearance
+G1 X142 Y16 F12000	; Move to front middle
