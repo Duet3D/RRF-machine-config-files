@@ -13,9 +13,11 @@ Printer features:
 
 Macros included:
 - detailed homing files
-- calibration macros
+- commmon movement commands
+- calibration and tuning macros
 - detailed assisted bed leveling
 - common diagnostic macros
 - Musical Tunes for playback with PanelDue speaker
+- Uses macros to set common values on the fly by calling with M98. Primitive form of variables.
 
 Further details: https://forum.duet3d.com/topic/5282/my-custom-d-bot
