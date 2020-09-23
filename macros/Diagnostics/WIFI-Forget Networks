@@ -1,0 +1,9 @@
+; Clear all wifi networks
+;
+M291 R"Clear WIFI networks? Y/N" P"Caution. New network must be added." S3 T10
+
+M552 S0			; Disable network module
+G4 S5			; wait 5 seconds
+M588 S"*"			; Clear all saved wifi networls
+
+M291 R"WIFI networks forgotten." P"You must add a new WIFI network."
