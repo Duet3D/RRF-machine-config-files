@@ -1,0 +1,7 @@
+; Test Routine for Duet Maestro August 2018; Initial Check
+
+;Start logging
+M929 P"test0log.txt" S1
+
+M122 P1 T10:50 V20:28
+M291 P"Check the Gcode Console for any errors" R"Initial Test" S2

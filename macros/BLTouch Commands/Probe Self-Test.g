@@ -1,3 +1,3 @@
 ; Self-Test
 ;
-M280 P0 S120		; Send PWM channel 3 the S10 (angle) command, inverted signal
+M280 P3 S120 I1		; Send PWM channel 3 the S10 (angle) command, inverted signal

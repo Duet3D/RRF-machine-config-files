@@ -1,0 +1,21 @@
+; Heater Test Routine for Duet 2 Maestro August 2018
+
+;Start logging
+M929 P"test2log.txt" S1
+
+
+M570 H1 P120 T120			; Extend the heater H1 fault timeout to 120 seconds for testing
+M570 H2 P120 T120			; Same for H2
+M570 H0 P120 T120			; Same for H0
+
+M563 P1 D0:1 H0:1:2 ; Define a tool T1 using all three heaters
+T1 ;select T1; 
+
+; Test Heaters
+M291 P"The heaters will start to heat to 60C. Observe the graph" R"Heating Test" S2
+; start heating hotends 
+G10 P1 S60:60:60
+G4 P15000
+M291 P"Heaters all Heated?" R"Heating Test" S2
+G10 P1 S0:0:0
+M291 P"End of heating test" R"heating Test" S2
