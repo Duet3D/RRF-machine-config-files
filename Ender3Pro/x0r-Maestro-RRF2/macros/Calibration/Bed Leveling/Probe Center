@@ -1,0 +1,2 @@
+G90				; absolute positioning
+G1 X159 Y142 Z10 F6000	; move probe to bed center

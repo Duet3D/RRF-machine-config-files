@@ -1,0 +1,5 @@
+; Moves print head to front left and drops the bed down for easy access
+;
+M291 P"Moving print head into maintenance position" T5
+G90			; Absolute positioning
+G1 X50 Y5 Z100		; Move into position

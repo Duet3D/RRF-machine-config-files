@@ -1,0 +1,31 @@
+; 0:/macros/Bed Leveling/0_Set Zmax height.g
+; Automates measuring the Zmax height
+;
+M291 P"This will set Z0 and calibrate Zmax height" R"Proceed?" S3
+M291 P"Heating and Homing all axis. Remove filament." T5
+M190 S60 ; Set bed temp to 60 and wait
+M109 S215 ; Set nozzle temp to 215 and wait
+G28			; Home all
+M98 P"0:/macros/1_Center Probe" ; move probe to center
+M291 P"Print head will now raise until the Z Max endstop is triggered" S3
+M913 Z50 ; drop the motor current of the z axis motor incase something goes wrong
+G1 S3 Z300 F400 ; move the Z axis up until the endstop is triggered and set M208 Z maxima
+M500 ; save m208 value for z axis to config override
+M291 P"ZMax homing will now be tested, starting with homing Zmin" S3
+M291 P"Homing to Zmin" T5
+M98 P"0:/macros/1_Center Probe" ; move probe to center
+M558 F600 A1
+G30 ; probe the bed at center
+M558 F120 A10
+G30
+M291 P"Ready to test Zmax homing?" R"Proceed?" S3
+M291 P"Homing to Zmax" T5
+G28 Z ; home to zmax
+M98 P"0:/macros/2_Center Nozzle" ; move nozzle to center of bed
+M291 P"Verify that Z max height is correct by moving to Z0" S3
+G90 ; absolute positioning
+G1 Z0 F400 ; move the Z axis to Z0
+M291 "The nozzle should now be just touching the bed." S3
+M913 Z100 ; return z axis motor current to normal
+M140 S0 ; turn bed heater off
+M104 S0 ; turn hotend heater off

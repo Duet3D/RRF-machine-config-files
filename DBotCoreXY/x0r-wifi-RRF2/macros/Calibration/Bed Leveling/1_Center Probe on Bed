@@ -1,0 +1,5 @@
+; move the nozzle to the center of the bed
+;
+;G91 G1 H2 Z5				; drop bed for nozzle clearance
+G90 G1 X185 Y111 F12000		; Move x and Y axis so probe over bed center
+

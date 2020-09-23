@@ -1,0 +1,40 @@
+; Motor Test Routine for Duet 2 Maestro August 2018
+
+;Start logging
+M929 P"test1log.txt" S1
+
+
+
+; Test motors
+;----setup motors for test----
+
+
+;The printer dimensions are deliberately set very high to allow a lot of moves during testing
+M584 X0 Y1 Z2 U3 V4                             ;Set all motors up as Axis
+M906 X1400 Y1400 Z1400 U1400 V1400 I100 		; Set all motors to 2A with no idle current reduction
+M201 X10000 Y10000 Z10000 U10000 V10000		; Acceleration limits (mm/s^2)
+M203 X100000 Y100000 Z100000 U10000 V10000			; Maximum speeds (mm/min)
+
+
+G92 X0 Y0 Z0 U0 V0                              ;Set them all to 0
+
+; Test motors
+
+M291 P"The motors will start to move. Press all 5 endstops, 1 at a time to confirm the motors stop moving" R"Homing Test" S2
+G91						; use relative positioning
+G1 S1 X3200 Y3200 Z3200 U3200 V3200 F1000			; move XYZUV motors, stopping when endstops are triggered
+;----end homing lines----
+
+M291 P"The motors will start to move backwards and forwards together. Check that they all move in both directions" R"Direction Test" S2
+G91
+G92 X0 Y0 Z0
+G1 S2 X400 Y400 Z400 U400 V400 F9000
+G1 S2 X-400 Y-400 Z-400 U-400 V-400 F9000
+G1 S2 X400 Y400 Z400 U400 V400 F9000
+G1 S2 X-400 Y-400 Z-400 U-400 V-400 F9000
+G1 S2 X400 Y400 Z400 U400 V400 F9000
+G1 S2 X-400 Y-400 Z-400 U-400 V-400 F9000
+
+M18 ; disable motors
+G92 X0 Y0 Z0 U0 V0                              ;Set them all to 0
+M291 P"End Of motor Test" R"Motor Test" S2

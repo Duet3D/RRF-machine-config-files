@@ -1,0 +1,6 @@
+; SystemDump.g
+;
+; Dumps a bunch of system information to the console with M122.
+;
+M291 S3 R"Are you sure?" P"This will run M122 and report system status to console."
+M122

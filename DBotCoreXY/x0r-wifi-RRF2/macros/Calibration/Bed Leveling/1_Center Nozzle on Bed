@@ -1,0 +1,4 @@
+; move the nozzle to the center of the bed
+;
+;G91 G1 Z5				; drop bed for nozzle clearance
+G90 G1 X142 Y140 F12000		; move to bed center

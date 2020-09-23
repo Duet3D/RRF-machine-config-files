@@ -1,0 +1,4 @@
+M140 S0	
+M140 S-273.15 R-273.15
+G10 P0 S-273.15 R-273.15
+M106 S0				;Put parts cooling fan off too

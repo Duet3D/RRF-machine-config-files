@@ -1,0 +1,5 @@
+; move the nozzle to the center of the bed
+;
+M291 P"Moving print head to bed center" T5
+G90				; absolute positioning
+G1 X159 Y142 Z50 F6000	; move probe to bed center

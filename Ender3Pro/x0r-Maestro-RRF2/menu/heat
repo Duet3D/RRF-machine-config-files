@@ -1,0 +1,34 @@
+button R0 C0 F0 T" BACK " A"return"
+text T" "
+button R0 C64 T"COOLDOWN" A"M98 P#0" L"/menu/cooldown"
+image R11 C0 L"hline.img"
+image R13 C4 L"bed.img"
+button C19 T"Off" A"M140 S0"
+button C45 T"50" A"M140 S50"
+button C68 T"80" A"M140 S80"
+button C87 T"90" A"M140 S90"
+button C108 T"110" V3 A"M140 S110"
+image R25 C4 L"nozzle.img"
+button C19 T"Off" A"M104 S0"
+button C41 T"180" A"M104 S180"
+button C62 T"200" A"M104 S200"
+button C83 T"210" A"M104 S210"
+button C104 T"235" A"M104 S235"
+image R37 C0 L"hline.img"
+image R39 C10 L"bed.img"
+value H2 N180 W20
+text T"/"
+value N80 W20
+image L"nozzle.img"
+value H2 N100 W20
+text T"/"
+value N0 W20
+image R50 C0 L"hline.img"
+text R52 C4 "IP Addr:"
+value H2 N530 W20
+text "."
+value H2 N531 W20
+text "."
+value H2 N532 W20
+text "."
+value H2 N533 W20

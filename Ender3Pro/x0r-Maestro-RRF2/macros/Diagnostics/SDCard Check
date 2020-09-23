@@ -1,0 +1,4 @@
+; Calls M39 to get details of inserted SD Card. 
+M117 "Check Console for SD Card Details"
+M39
+M122 P104
