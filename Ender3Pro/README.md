@@ -7,7 +7,7 @@ Printer features:
 - Single z motor 2mm lead screw
 - Z max endstop for power loss recovery
 - Stock build volume
-- 
+- Stock display and encoder wheel used
 - Homes bed to rear, X carriadge to left (0,0)
 - Origin front left (0,0)
 
