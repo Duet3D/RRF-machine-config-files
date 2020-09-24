@@ -1,0 +1,12 @@
+button R0 C0 F0 T" BACK " A"return"
+text T" "
+image R11 C0 L"hline.img"
+text R26 C8 F0 T"Baby Step Adjust"
+alter C88 D2 N521
+image R51 C0 L"hline.img"
+text R52 C5 F0 T"X "
+value N510 W25
+text T" Y "
+value N511 W25
+text T" Z "
+value N512 D2 W30 

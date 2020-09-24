@@ -1,0 +1,57 @@
+; 2_ZStallProbe.g
+;
+; Uses the Z axis StallGuard detection as a Z-Probe
+;
+
+M291 P"Are you sure you want to proceed?" R"StallGuard Z-Probe" S3
+
+M280 P3 S160 I1 	; Alarm Release and Push-Pin UP, inverted signal
+G28
+G90                			; absolute positioning
+G1  X150 Y150 Z3 F4000 			; Always probe on the same spot
+M558 P9 Z0			; Disable BLTouch
+M558 P10 X0 Y0 Z1 H3 F200 T6000	A10 R0.1 S0.005    	; Enable Stall Z probe
+G31 X0 Y0 Z0 P200           		; Set Z probe trigger value, offset and trigger offset (overshoot due to springs)
+M574 Z1 S3         	    		; set Z-min to use motor StallGuard
+M913 Z40   		      		; reduce motor current to 20%
+M201 Z20				; Reduce acceleration mm/s2
+M915 Z S4 F0 R0			; Set StallGuard sensitivity for endstop homing
+
+M291 P"StallGuard Z-Probe Settings Loaded. Proceed with Probe?" R"Yes or No?" S3
+
+M400 
+
+G30 S-1					; Find the bed Z=0 reference
+G1 Z3
+G30 S-1 				; do a couple of repeatability tests
+G1 Z3
+G30 S-1
+G1 Z3
+G30 S-1
+G1 Z3
+G30 S-1
+G1 Z3
+G30 S-1					; Find the bed Z=0 reference
+G1 Z3
+G30 S-1 				; do a couple of repeatability tests
+G1 Z3
+G30 S-1
+G1 Z3
+G30 S-1
+G1 Z3
+G30 S-1
+G1 Z3
+
+M400
+
+M280 P3 S160 I1 	; Alarm Release and Push-Pin UP, inverted signal
+
+M291 P"Probing complete. Restoring settings." S3
+
+M913 Z100   		      				; restore current to 100%
+M201 Z300 						; Restore acceleration
+M915 Z S63 F1 R0					; Set StallGuard sensitivity for normal movement
+M574 Z1 S2						; Use zprobe and home to Z Min.
+M558 P9 X0 Y0 Z1 H3 F100 T6000 A10 R0.5	S0.005		; P9 for BLTouch, dive height 3mm, probe at 100mm/s, travel 6000mm/s, up to 10 probes, pause 0.5s
+G31 X-41.8 Y32.2 Z2.3 P25				; probe offset from nozzle, p is trigger value, set low for bltouch, set Z=0 for testing 
+

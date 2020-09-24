@@ -1,0 +1,7 @@
+; 2_HomeZMax.g
+; Calls 0:/sys/HomeZMax.g to home Z to max endstop
+;
+
+M98 P"0:/sys/HomeZMax.g"		; Call the homezmax macro. 
+
+

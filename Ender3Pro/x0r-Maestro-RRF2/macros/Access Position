@@ -1,0 +1,4 @@
+; Move all axis to middle positions for easier access
+
+G90 ; Absolute positioning
+G1 X117 Y117 Z117

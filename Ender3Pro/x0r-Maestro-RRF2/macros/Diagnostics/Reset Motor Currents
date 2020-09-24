@@ -1,0 +1,3 @@
+M291 S3 R"Are you sure?" P"This will reset motor currents to max."
+M906 X2000 Y2000 Z2000 E1400 I20
+M906

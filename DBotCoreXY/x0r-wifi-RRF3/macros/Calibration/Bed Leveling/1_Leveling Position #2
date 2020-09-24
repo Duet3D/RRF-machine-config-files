@@ -1,0 +1,6 @@
+;Moves print head to rear right position closest to pitch adjustment screw.
+;
+G90			; Absolute positioning
+G1 Z2			; Lower bed for nozzle clearance
+G1 X255 Y280 F12000	; Move to rear right corner
+G91			; Relative positioning

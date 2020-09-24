@@ -1,0 +1,60 @@
+; "Not printing" Menu
+;
+button R51 C0 F0 V5 T" HEAT " A"menu heat"
+button V5 T" MOVE " A"menu move"
+button V5 " CTRL " A"menu control"
+button V5 " PRINT " A"menu listFiles"
+;
+; "Printing" Menu
+;
+button R51 C0 F0 V2 T"  BABYSTEP  " A"menu babysteps"
+button V2 T"  PAUSE        " A"M25"
+;
+; "Paused" Menu
+;
+button R51 C0 F0 V6 T"  RESUME  " A"M24"
+button V6 T"  ABORT         " A"M0 H1"
+;
+image R3 C2 L"d3d.img"
+;
+image R0 C33 L"nozzle.img"
+alter R10 C16 H2 N100 W20
+text R10 C38 T"/"
+value N0 W20
+;
+;
+image R0 C73 L"bed.img"
+alter R10 H2 C55 N180 W20
+text R10 C77 T"/"
+value N80 W20
+;
+;
+image R0 C112 L"fan.img"
+alter R10 C98 H2 N300 W20
+text T"%"
+;
+image R21 C0 L"hline.img"
+;
+;
+image R35 C0 L"hline.img"
+text R37 C8 F0 T"X: "
+value N510 W25
+text T" Y: "
+value N511 W25
+text T" Z: "
+value N512 D2 W30
+image R49 C0 L"hline.img"
+;
+;
+image R25 C4 L"flowrate.img"
+alter R23 C12 H2 N400 W20
+text T"%"
+;
+;
+image R25 C48 L"speed.img"
+alter R23 C56 H2 N500 W20
+text T"%"
+;
+image R25 C92 L"baby.img"
+alter R23 C102 N521 W26 D2
+;

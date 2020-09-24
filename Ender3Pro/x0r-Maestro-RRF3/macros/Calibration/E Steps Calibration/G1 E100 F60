@@ -1,0 +1,4 @@
+M83 		; relative extrusion
+G1 E100 F60	; extrude 100mm at 1mm/s
+M400		; clear movement buffer
+M300 S300 P1000	; beep

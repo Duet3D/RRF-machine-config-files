@@ -1,0 +1,65 @@
+; BLTouch trigger height calibration
+;
+
+M291 R"Trigger Height Calibration Routine" P"This will assist in measuring the Z Probe trigger height." S3
+G28		; home all
+M400		; wait for all moves to finish
+M104 S200	; set hotend temp
+M140 S60	; set bed temp
+M116		; wait for temps to be reached
+M564 S0 H0 	; Allow forbidden moves
+M561      	; clear height map
+G31 Z0    	; Reset Z trigger height
+; Move nozzle to center of bed
+M98 P"0:/macros/Manual Bed Leveling Points/Nozzle Center"
+M400		; wait for moves
+; Jog nozzle to touch bed surface
+M291 R"Set Z=0" P"Carefully jog the Z axisdown until the nozzle just touches the bed" Z1 S3
+G92 Z0    ; Set Z0
+; Move probe to center of bed
+M98 P"0:/macros/Manual Bed Leveling Points/Probe Center"
+M400		; wait for moves to finish
+G91       	; relative positioning
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+G30 S-1   	; measure trigger height 10 times
+M400
+G1 Z5
+M400
+M104 S0		; Turn off heaters
+M140 S0
+M291 R"Trigger Height Calibration Complete" P"Check the console for the results. Take the average and modify G31 Z in config.g" S3

@@ -1,0 +1,11 @@
+; Add default wifi network
+;
+M291 R"Add default WIFI network? Y/N" P"This will add duetwifi access point." S3 T10
+
+M552 S0			; Disable network module
+G4 S5			; wait 5 seconds
+M587 S"NETWORKNAME" P"PASSWORD"			; Add duet wifi SSID to remembered networks list
+G4 S5			; wait 5 seconds
+M552 S1			; reenable wifi module
+
+M291 R"duetwifi SSID added." P"Check console to verify IP address."

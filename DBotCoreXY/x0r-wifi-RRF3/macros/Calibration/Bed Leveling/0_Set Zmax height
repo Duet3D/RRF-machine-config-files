@@ -1,0 +1,24 @@
+; 0:/macros/Bed Leveling/0_Set Zmax height.g
+; Automates measuring the Zmax height for optical endstop at ~300mm
+;
+M291 P"This will set Z0 and calibrate Zmax height" R"Proceed?" S3
+M291 P"Homing all axis" T5
+G28			; Home all
+G90			; Absolute positioning
+M98 P"0:/macros/0_Center Nozzle.g"	; Move nozzle to bed center	
+M291 P"Adjust nozzle height until it's touching bed" Z1 S3
+G92 Z0 			; set Z0
+M291 P"Bed will now drop to Z300" S3
+G1 Z300			; Move bed down 300mm
+G1 S3 Z300 F200
+M500 ; save m208 value for z axis to config override
+M291 P"Adjust optical endstop flag until light just turns off" R"Set Zmax=300mm" S3
+M291 P"ZMax homing will now be tested, starting with homing Zmin" S3
+M291 P"Homing to Zmin" T5
+G28 Z
+M291 P"Ready to test Zmax homing?" R"Proceed?" S3
+M291 P"Homing to Zmax" T5
+M98 P"0:/macros/2_HomeZMax.g" ; Test Zmax homing
+M291 P"ZMax homing test complete. Printer will now home all." R"Proceed?" S3
+G28	; Home all
+M291 "ZMax calibration complete." S3

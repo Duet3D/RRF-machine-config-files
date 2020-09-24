@@ -1,0 +1,7 @@
+button R0 C5 F0 T"BACK " A"return"
+;image R11 C5 L"hline.img"
+button R10 C5 T"COOLDOWN" A"M98 P#0" L"/menu/cooldown"
+button R20 C5 T"MOTORS OFF" A"M18"
+button R30 C5 T"REBOOT MAESTRO" A"M999"
+button R40 C5 T"RUN MESH COMPENSATION" A"M98 P#0" L"/menu/meshcomp"
+button R50 C5 T"BLTOUCH MENU" A"menu bltouch"
