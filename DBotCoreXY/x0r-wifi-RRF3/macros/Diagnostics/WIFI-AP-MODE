@@ -1,0 +1,11 @@
+; Configure Access Point Mode
+;
+M291 R"Create Duet Access Point? Y/N" P"This will create duetwifi-AP SSID to connect to." S3 T10
+
+M552 S0			; Disable network module
+G4 S5			; wait 5 seconds
+M589 S"duetwifi-AP" P"duetwifi" I192.168.1.1 C1			; Add duet wifi SSID to remembered networks list
+G4 S5			; wait 5 seconds
+M552 S2			; reenable wifi module
+
+M291 R"duetwifi-AP SSID added." P"SSID password is duetwifi."
