@@ -20,5 +20,5 @@ G90
 
 G1 Y50 F4000					; move out
 
-M208 Y66						; set Y max for this tool
+M208 Y49						; set Y max for this tool
 M564 S1 						; apply the normal limits again

@@ -12,3 +12,4 @@ M98 Phomex.g			; Home X
 M98 Phomez.g			; Home Z
 
 G1 X0 Y-148 F15000		; Park
+G29 S1					; Load height map
