@@ -129,7 +129,7 @@ body:
     description: Please tell us about your printer.
     placeholder: Make, model, DIY, kinematics, motors, power supply voltage, heaters, fans, etc.
   validations:
-    required: true
+    required: false
 - type: textarea
   id: Links
   attributes:
@@ -140,8 +140,15 @@ body:
 - type: textarea
   id: ProblemDescription
   attributes:
-    label: Links to additional info.
-    description: Describe the problem in as much detail as possible. Expected result, Observed result, Steps to reproduce. 
+    label: What happened?
+    description: Describe the problem in as much detail as possible.
+    value: |
+      Expected result
+      
+      Observed result
+      
+      Steps to reproduce
+      ...
   validations:
     required: true
 
