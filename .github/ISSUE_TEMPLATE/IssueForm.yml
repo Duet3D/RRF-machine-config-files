@@ -68,7 +68,8 @@ body:
       - label: PanelDue
       - label: Other
       - label: None
-        required: true
+  validations:
+    required: true
 - type: input
   id: FirmwareVersion
   attributes:
@@ -93,7 +94,8 @@ body:
     options:
       - label: Yes I use a Pi.
       - label: No I do not use a Pi.
-        required: true
+  validations:
+    required: true
 - type: textarea
   id: M122
   attributes:
