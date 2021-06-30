@@ -1,34 +1,33 @@
 name: "Bug Report"
 description: "File a bug report"
 title: "[Bug]: "
-labels: bug
-assignees:
-  - x0rtrunks
+labels: "bug"
+assignees: x0rtrunks
 body:
 - type: markdown
   attributes:
     value: |
       # STOP!
       ### Before posting a bug report here, you must start a discussion on Duet3D forums. This is to help reduce duplicates and solve configuration issues.
-       - https://forum.duet3d.com/categories
+      https://forum.duet3d.com/categories
 
       ### Before posting your issue, please review the following sources to check if your question has already been reported and answered.
 
       #### Have you checked the documentation? 
-       - https://duet3d.dozuki.com/
+      https://duet3d.dozuki.com/
 
       #### Have you checked the GCODE Wiki? 
-       - https://duet3d.dozuki.com/Wiki/Gcode
+      https://duet3d.dozuki.com/Wiki/Gcode
 
       #### Have you checked the firmware release notes? 
-       - RRF2: https://github.com/Duet3D/RepRapFirmware/blob/dev/WHATS_NEW.md 
-       - RRF3: https://github.com/Duet3D/RepRapFirmware/blob/v3-dev/WHATS_NEW_RRF3.md
+      RRF2: https://github.com/Duet3D/RepRapFirmware/blob/dev/WHATS_NEW.md 
+      RRF3: https://github.com/Duet3D/RepRapFirmware/blob/v3-dev/WHATS_NEW_RRF3.md
 
       #### Have you searched the forums? 
-       - https://forum.duet3d.com/search
+      https://forum.duet3d.com/search
 
       #### If this is a Beta firmware release, have you checked the Beta Firmware Forum?
-       - https://forum.duet3d.com/category/30/beta-firmware
+      https://forum.duet3d.com/category/30/beta-firmware
 
       #### Have you searched the existing issues on GitHub?
 - type: input
@@ -68,7 +67,8 @@ body:
       - label: PanelDue
       - label: Other
       - label: None
-        required: true
+  validations:
+    required: true
 - type: input
   id: FirmwareVersion
   attributes:
@@ -93,7 +93,8 @@ attributes:
   options:
     - label: Yes I use a Pi.
     - label: No I do not use a Pi.
-  required: true       
+  validations:
+    required: true      
 - type: textarea
   id: M122
   attributes:
