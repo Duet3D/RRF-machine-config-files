@@ -13,17 +13,17 @@ body:
 
       ### Before posting your issue, please review the following sources to check if your question has already been reported and answered.
 
-      #### Have you checked the documentation? 
+      #### Have you checked the documentation?
       https://duet3d.dozuki.com/
 
-      #### Have you checked the GCODE Wiki? 
+      #### Have you checked the GCODE Wiki?
       https://duet3d.dozuki.com/Wiki/Gcode
 
-      #### Have you checked the firmware release notes? 
-      RRF2: https://github.com/Duet3D/RepRapFirmware/blob/dev/WHATS_NEW.md 
+      #### Have you checked the firmware release notes?
+      RRF2: https://github.com/Duet3D/RepRapFirmware/blob/dev/WHATS_NEW.md
       RRF3: https://github.com/Duet3D/RepRapFirmware/blob/v3-dev/WHATS_NEW_RRF3.md
 
-      #### Have you searched the forums? 
+      #### Have you searched the forums?
       https://forum.duet3d.com/search
 
       #### If this is a Beta firmware release, have you checked the Beta Firmware Forum?
