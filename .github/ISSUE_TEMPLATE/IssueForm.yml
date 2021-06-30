@@ -1,7 +1,7 @@
 name: Bug Report
 description: File a bug report
 title: "[Bug]: "
-labels: [bug, triage]
+labels: [bug]
 assignees:
 - x0rtrunks
 body:
@@ -68,8 +68,7 @@ body:
       - label: PanelDue
       - label: Other
       - label: None
-  validations:
-    required: true
+      required: true
 - type: input
   id: FirmwareVersion
   attributes:
@@ -94,8 +93,7 @@ body:
     options:
       - label: Yes I use a Pi.
       - label: No I do not use a Pi.
-  validations:
-    required: true
+      required: true
 - type: textarea
   id: M122
   attributes:
@@ -129,7 +127,7 @@ body:
     description: Please tell us about your printer.
     placeholder: Make, model, DIY, kinematics, motors, power supply voltage, heaters, fans, etc.
   validations:
-    required: false
+    required: true
 - type: textarea
   id: Links
   attributes:
