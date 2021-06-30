@@ -106,7 +106,7 @@ body:
   validations:
     required: false
 - type: textarea
-  id: config.g
+  id: config
   attributes:
     label: Please upload the content of your config.g file.
     description: This will show us how your printer is configured at startup.
