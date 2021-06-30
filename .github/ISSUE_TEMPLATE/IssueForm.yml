@@ -89,7 +89,7 @@ body:
 id: SBCMode
 attributes:
   label: Are you using a Single Board Computer (RaspberryPi) with your Duet?
-  description: SBC: Yes or No.
+  description: SBC - Yes or No.
   options:
     - label: Yes I use a Pi.
     - label: No I do not use a Pi.
