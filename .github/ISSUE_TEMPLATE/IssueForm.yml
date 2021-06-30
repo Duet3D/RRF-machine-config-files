@@ -70,3 +70,11 @@ body:
       - label: None
   validations:
     required: true
+- type: input
+  id: FirmwareVersion
+  attributes:
+    label: Firmware Version
+    description: What version of our software are you running? Identify by sending M115
+    placeholder: ex. RepRapFirmware 3.2.2, PanelDueFirmware 3.3
+  validations:
+    required: true
