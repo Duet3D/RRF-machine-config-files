@@ -3,27 +3,34 @@ Config for Duet WiFi on stock Ender 5 Plus hardware with Creality metal extruder
 Connections as follows:
 
 Motors:
+
     Standard plug pushed onto Duet connectors. 
     Dual Z motors connected to ZA and ZB. They only go on comfortably one way.
 
 End Stops:
+
     Must be converted to 3 pin connectors, using outer 2 pins on X and Y (GND and STOP). No Z stop as equipped with BLTouch.
 
 Thermistors:
+
     Bed > Thermitor0.
     Hotend > E0 Thermistor E1.
     These can be simply pushed onto the connectors if you don't want to re-crimp.
 
 Fans:
+
     Can be simply pushed onto the connectors Fan0 for part cooling, Fan1 for hotend. These need reversing polarity from the way the connectors want to comfortably fit, so best re-crimped.
 
 Bed Heater:
+
     Connect wires leading to the solid state relay into the bed heater output.
 
 Nozzle Heater:
+
     Connect into E0 heater.
 
 BLTouch:
+
     Connected as per https://forum.duet3d.com/assets/uploads/files/1587224870310-ender-5-pro-duet-2-wifi-hemera-bltouch-firmware-3.pdf
 
     Before going ahead, check that you've got BLTouch 3.1 or later. Earlier versions require a mod to work at 3.3V and may damage your Duet board. The version is printed on the PCB.
@@ -39,10 +46,12 @@ BLTouch:
     For the red, brown and orange wires, the simplest way I found to do this was pop out the wires from the plastic 3 pin and pop them into a a 2x4 pin plastic. I actually used an old USB expansion header with the blanked pin end trimmed down, but you could use anything that fits the pins spacing. The white connector ideally want re-cripming onto one of the 4 pin bodies in the Duet kit, but it'll press on as-is.
 
 Power. Obvs:
+
     Red > Vin
     Black > Vout
 
 Suggested Testing routing:
+
     Upload the config.
 
     Connect everything except the motors and BLTouch.
