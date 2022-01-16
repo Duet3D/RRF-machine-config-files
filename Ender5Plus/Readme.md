@@ -13,7 +13,7 @@ End Stops:
 
 Thermistors:
 
-    Bed > Thermitor0.
+    Bed > Thermistor0.
     Hotend > E0 Thermistor E1.
     These can be simply pushed onto the connectors if you don't want to re-crimp.
 
