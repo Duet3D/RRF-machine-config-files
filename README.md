@@ -12,7 +12,7 @@ The root folders in this repository are machine names. Within each root folder a
 
 Files for Duet WiFi will generally work on Duet Ethernet, and vice versa.
 
-**Contributions**
+## Contributions
 
 Contributions from users are welcomed. The preferred way to make a contribution is to fork this repository, add your contribution to the fork, and submit a pull request.
 
@@ -32,3 +32,7 @@ Your README.md file should cover at least the following:
 Make sure that you do not include any passwords in your config.g file or any other files, except perhaps for the default 'reprap' password.
 
 Please note, the Creative Common Zero license for this repository allows anyone to use these files for any purpose, without attribution or any requirement to share derived works. Make sure you are happy with this before submitting your contributions. However, if you wish to submit a contribution derived someone else's files, please ackowledge that person at least in the readme file.
+
+## Support requests
+
+Please use the [forum](https://forum.duet3d.com) for support requests.
