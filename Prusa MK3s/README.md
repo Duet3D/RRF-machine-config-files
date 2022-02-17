@@ -18,7 +18,7 @@ M350 X16 Y16 Z16 I1                 ; Microstepping with interpolation
 M350 E32 I0                         ; Microstepping without interpolation
 M92 X100.00 Y100.00 Z400.00 E280.00     ; Steps per mm
 
-2) Stallguard sensetivity! As I'm using 0.9 X/Y stepper you most likely need to adjust your stallguard sensetivity. Look for the "M915" gcode. A good explanation on how to calibrate stallguard: https://duet3d.dozuki.com/Wiki/Stall_detection_and_sensorless_homing
+2) Stallguard sensetivity! As I'm using 0.9 X/Y stepper you most likely need to adjust your stallguard sensetivity. Look for the "M915" gcode. A good explanation on how to calibrate stallguard: https://docs.duet3d.com/en/User_manual/Connecting_hardware/Sensors_stall_detection
 
 
 **Mandatory changes to your start gcode (Slicer) to use the autoload feature you may also find in the stock Prusa MK3s firmware**

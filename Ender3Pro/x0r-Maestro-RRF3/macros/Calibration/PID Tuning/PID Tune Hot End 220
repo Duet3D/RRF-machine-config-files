@@ -1,5 +1,5 @@
 ; 0:/macros/PID Tuning/PID Tune Hot End 220
-; Based on https://duet3d.dozuki.com/Wiki/Tuning_the_heater_temperature_control
+; Based on https://docs.duet3d.com/en/User_manual/Connecting_hardware/Heaters_tuning
 ;
 
 M291 S3 R"PID Tuning Hotend to 220c" P"Do not interrupt or leave unattended while tuning in progress."

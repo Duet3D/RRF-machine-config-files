@@ -76,7 +76,7 @@ Suggested Testing routing:
     Connect and test the Z motors by homing Z, being careful to check the the probe is extending and triggering it manually. Follow the excellent guide here to compete the routine to calibrate the nozzle height from 
     the probe: https://betrue3d.dk/bltouch-on-duet-wifi-configuratio-and-usage/#testandcalibrate Note that the guide connects the orange wire to Heater7 instead of 3 like I did.
     
-    If using PID control for the bed, run the PID tune routine here: https://duet3d.dozuki.com/Wiki/Tuning_the_heater_temperature_control. If you don't you may get message that the expected temp rise wasn't enough. Mine would never complete and would hang on stage 4. My values ought to work, though.
+    If using PID control for the bed, run the PID tune routine here: https://docs.duet3d.com/en/User_manual/Connecting_hardware/Heaters_tuning. If you don't you may get message that the expected temp rise wasn't enough. Mine would never complete and would hang on stage 4. My values ought to work, though.
     
     Connect and test the extruder. This may need to motor reversing if you are running something different to me. You may also need to tune the steps/mm as detailed in the Duet guide.
     

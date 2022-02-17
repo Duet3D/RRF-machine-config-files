@@ -164,5 +164,5 @@ M98  P"/sys/Toffsets.g"                  ; Set tool offsets from the bed. In sep
 ;G29 S1
 
 ; Note: you will need to tune the bed heater, and both extruder cartridges before printing.
-; See the following link for more details. https://duet3d.dozuki.com/Wiki/Tuning_the_heater_temperature_control
+; See the following link for more details. https://docs.duet3d.com/en/User_manual/Connecting_hardware/Heaters_tuning
 

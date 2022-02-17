@@ -1,5 +1,4 @@
-; https://duet3d.dozuki.com/Wiki/RepRapFirmware_3_overview
-; https://duet3d.dozuki.com/Wiki/Gcode
+; https://docs.duet3d.com/en/User_manual/Reference/Gcodes
 
 ; General preferences
 G90                                              ; send absolute coordinates...

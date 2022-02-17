@@ -20,4 +20,4 @@ Macros included:
 - Musical Tunes for playback with PanelDue speaker
 - Uses macros to set common values on the fly by calling with M98. Primitive form of variables.
 
-Further details: https://duet3d.dozuki.com/Guide/Ender+3+Pro+and+Duet+Maestro+Guide+Part+1:+Wiring/37
+Further details: https://docs.duet3d.com/How_to_guides/e3p_Mini5+_guide_part2_configuration
