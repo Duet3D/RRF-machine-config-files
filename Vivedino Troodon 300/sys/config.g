@@ -54,7 +54,7 @@ M574 Y2 S1 P"ystop"                                ; configure switch-type (e.g.
 M574 Z1 S0                                         ; configure Z-probe endstop
 
 ; Z-Probe
-S0 C"duex.pwm5" ; create servo pin 0 for BLTouch
+M950 S0 C"duex.pwm5" ; create servo pin 0 for BLTouch
 M558 P9 C"^zprobe.in" H5 F120 T6000 ; Duet 2 WiFi/Ethernet, DueX2/5
 G31 X20 Y0 Z3.3 P25
 
@@ -63,19 +63,33 @@ M557 X10:290 Y21:290 S50                 ; Define mesh grid
 ; Heaters
 M308 S0 P"bedtemp" Y"thermistor" T100000 B4138     ; configure sensor 0 as thermistor on pin bedtemp
 M950 H0 C"bedheat" T0                              ; create bed heater output on bedheat and map it to sensor 0
-M307 H0 B0 S1.00                                   ; disable bang-bang mode for the bed heater and set PWM limit
+;M307 H0 B0 S1.00                                   ; disable bang-bang mode for the bed heater and set PWM limit
+M307 H0 R0.616 K0.258:0.000 D5.23 E1.35 S1.00 B0	; settings from the auto-tunning M303 H0
 M140 H0                                            ; map heated bed to heater 0
 M143 H0 S120                                       ; set temperature limit for heater 0 to 120C
 M308 S1 P"e0temp" Y"thermistor" T100000 B4138      ; configure sensor 1 as thermistor on pin e0temp
 M950 H1 C"e0heat" T1                               ; create nozzle heater output on e0heat and map it to sensor 1
-M307 H1 B0 S1.00                                   ; disable bang-bang mode for heater  and set PWM limit
+;M307 H1 B0 S1.00                                   ; disable bang-bang mode for heater  and set PWM limit
+M307 H1 R2.650 K0.574:0.174 D8.66 E1.35 S1.00 B0 V24.1 ; settings from the auto-tunning M303 T0 S230
 M143 H1 S280                                       ; set temperature limit for heater 1 to 280C
 
 ; Fans
-M950 F0 C"fan0" Q500                               ; create fan 0 on pin fan0 and set its frequency
-M106 P0 S0 H-1                                     ; set fan 0 value. Thermostatic control is turned off
-M950 F1 C"fan1" Q500                               ; create fan 1 on pin fan1 and set its frequency
-M106 P1 S1 H1 T45                                  ; set fan 1 value. Thermostatic control is turned on
+M950 F0 C"fan0" Q250                               			; create fan 0 on pin fan0 and set its frequency
+M106 P0 S0 H-1 C"PART FAN"                         			; set fan 0 value. Thermostatic control is turned off
+M950 F1 C"fan1" Q250                               			; create fan 1 on pin fan1 and set its frequency
+M106 P1 H1 T45 S1 C"EXTRUDER FAN"                  			; set fan 1 value. Thermostatic control is turned on
+M950 F2 C"fan2" Q250				   						; create fan 2 on pin fan2 and set its frequency
+M106 P2 H10:11:12 T45:65 L0.4 X1.0 C"COMPARTMENT FAN"     	; set fan 2 value. starts to turn on when the MCU temperature (virtual heater 10) reaches 45C and reaches full speed when the MCU temperature reaches 65C or if any TMC2660 drivers (virtual heaters 11 and 12) report that they are over-temperature
+M950 F8 C"duex.fan8" Q250			   						; create pin 8 on pin fan8 and set its frequency
+M106 P8 H10:11:12 T40:65 L1.0 C"STEPPER FAN"	   			; set fan 8 value. Thermostatic control is turned on
+M950 F9 C"duex.fan7" Q250			   						; create pin 9 on pin fan7 and set its frequency
+M106 P9 S0 H-1 C"AIR FILTRATION"		   					; set fan 9 value. Thermostatic control is turned off
+
+; Free up Fan pin
+M950 F3 C"nil" 					   					; disable fan 3 and free up the associated pin
+M950 F4 C"nil" 					   					; disable fan 4 and free up the associated pin
+M950 F5 C"nil" 					   					; disable fan 5 and free up the associated pin
+M950 F6 C"nil" 					   					; disable fan 6 and free up the associated pin
 
 ; Tools
 M563 P0 D0 H1 F0                                   ; define tool 0
@@ -99,4 +113,5 @@ M591 D0 P1 C3 S1
 ; Miscellaneous
 M501                                               ; load saved parameters from non-volatile memory
 M911 S10 R11 P"M913 X0 Y0 G91 M83 G1 Z3 E-5 F1000" ; set voltage thresholds and actions to run on power loss
+
 
