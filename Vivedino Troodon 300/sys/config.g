@@ -38,7 +38,7 @@ M92  X80 Y80 Z400 E727                 ; set steps per mm
 M566 X2000 Y2000 Z602.65 E250                ; set maximum instantaneous speed changes (mm/min)
 M203 X20000 Y20000 Z6000 E3200            ; set maximum speeds (mm/min)
 M201 X1500 Y1500 Z500 E3200                ; set accelerations (mm/s^2)
-M906 X1200 Y1200 Z1200 E300 I60		              	  ; motor currents (mA) and motor idle factor in per cent
+M906 X1200 Y1200 Z1200 E1000 I60		              	  ; motor currents (mA) and motor idle factor in per cent
 M84 S30                                            ; Set idle timeout
 M671 X-50:-50:370:370 Y330:-65:-65:330 S20          ; Z belts at 4 corners
 
