@@ -1,0 +1,4 @@
+; Load filament
+G1 E1085 F3600
+G1 E60 F200
+M84 P3 E0
